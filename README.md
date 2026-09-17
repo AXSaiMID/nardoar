@@ -18,6 +18,22 @@ npm run build    # build de produção em /dist
 npm run preview  # serve o build
 ```
 
+## Publicação (GitHub Pages)
+
+O site está publicado em **https://axsaimid.github.io/nardoar/** — o Pages do repo serve a pasta `/docs` (modo legacy).
+
+Para publicar uma nova versão:
+
+```bash
+npm run deploy:docs   # compila e copia o build para /docs
+git add docs && git commit -m "deploy" && git push
+```
+
+> O workflow `.github/workflows/deploy.yml` também está pronto: se no GitHub você for em
+> **Settings → Pages → Build and deployment → Source: GitHub Actions**, o deploy passa a
+> ser automático a cada push (sem precisar commitar `/docs`).
+> Para domínio próprio ou deploy na raiz: `BASE=/ npm run build`.
+
 ## Experiência
 
 - **Preloader** cinematográfico com contador e cortina de saída
